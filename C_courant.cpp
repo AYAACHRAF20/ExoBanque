@@ -10,7 +10,7 @@ void Bank::C_courant::debiter(double montant) {
     else if (montant <= this->solde) {
         Compte::debiter(montant);
     }
-    else if (this->solde - montant >= -plafond) {
+    else if (this->solde - montant >= -(this->plafond)) {
         this->solde -= montant;  
         cout << "retrait effectue, nouveau solde = " << this->solde << endl;
     }
